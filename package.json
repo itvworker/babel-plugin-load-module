@@ -1,0 +1,26 @@
+{
+  "name": "babel-plugin-load-module",
+  "version": "1.0.0",
+  "description": "按需加载模块",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itvworker/babel-plugin-load-module.git"
+  },
+  "keywords": [
+    "babel",
+    "babel",
+    "plugin",
+    "babel插件",
+    "按需加载"
+  ],
+  "author": "itvwork",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itvworker/babel-plugin-load-module/issues"
+  },
+  "homepage": "https://github.com/itvworker/babel-plugin-load-module#readme"
+}
