@@ -1,7 +1,3 @@
-
-
-
-
 module.exports = function ({ types: t }) {
     return {
         visitor: {
@@ -20,15 +16,19 @@ module.exports = function ({ types: t }) {
                 }
 
                 spc.forEach((item,index)=>{
-                    let jsPath = t.stringLiteral(opts.jsPath.replace(/\{key\}/ig, item.imported.name));
-                    let cssPath = t.stringLiteral(opts.cssPath.replace(/\{key\}/ig, item.imported.name));
-                    arr.push(t.importDeclaration([], cssPath));
-                    let jsData = t.importDeclaration([
-                        t.importDefaultSpecifier(
-                            t.identifier(item.imported.name)
-                        )
-                    ], jsPath)
-                    arr.push(jsData);
+                    if(opts.cssPath) {
+                        let cssPath = t.stringLiteral(opts.cssPath.replace(/\{key\}/ig, item.imported.name));
+                        arr.push(t.importDeclaration([], cssPath));
+                    }
+                    if(opts.jsPath) {
+                        let jsPath = t.stringLiteral(opts.jsPath.replace(/\{key\}/ig, item.imported.name));
+                        let jsData = t.importDeclaration([
+                            t.importDefaultSpecifier(
+                                t.identifier(item.imported.name)
+                            )
+                        ], jsPath)
+                        arr.push(jsData);
+                    }
                 })
 
                 path.replaceWithMultiple(arr);

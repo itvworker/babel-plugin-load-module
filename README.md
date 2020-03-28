@@ -16,10 +16,10 @@
     ],
     "plugins": [
         ["babel-plugin-load-module", {
-            "cssPath": "page/dist/{key}.css", //必须css路径
-            "jsPath": "page/dist/{key}", //js路径必须
+            "cssPath": "page/dist/{key}.css", //不是必须
+            "jsPath": "page/dist/{key}", //不是必须
             "public": "page/dist/assets/style.css", //公用css,可不传
-            "name": "page" //包名
+            "name": "page" //包名，必须
         }]
     ]
 }
